@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서 검색 서비스</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">📚 책 검색하기</a></h1>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="favorites.html">내 관심 도서</a>
+        </nav>
+    </header>
+    <main>
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+            <button id="searchBtn">검색</button>
+        </section>
+        <!-- 검색 결과가 표시될 영역 -->
+        <section class="book-list" id="bookList"></section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
