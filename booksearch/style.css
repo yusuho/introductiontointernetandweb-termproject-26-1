@@ -1,0 +1,38 @@
+/* 기본 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background-color: #f4f4f9; color: #333; }
+a { text-decoration: none; color: inherit; }
+
+/* 헤더 */
+header { background: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+nav a { margin-left: 1rem; font-weight: bold; color: #007bff; }
+
+/* 메인 레이아웃 */
+main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+
+/* 검색 영역 */
+.search-section { display: flex; gap: 10px; margin-bottom: 2rem; justify-content: center; }
+.search-section input { padding: 0.5rem; width: 100%; max-width: 400px; border: 1px solid #ccc; border-radius: 4px; }
+.search-section button { padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+
+/* 도서 목록 (반응형 그리드) */
+.book-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.book-item { background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+.book-item img { max-width: 100%; height: auto; margin-bottom: 10px; }
+
+/* 도서 상세 레이아웃 */
+.detail-container { background: white; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; gap: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+/* 모바일 및 태블릿 반응형 처리 */
+@media (min-width: 768px) {
+    /* PC 환경에서는 상세 정보를 가로로 배치 */
+    .detail-container { flex-direction: row; }
+    .detail-container img { width: 300px; flex-shrink: 0; }
+}
+
+@media (max-width: 480px) {
+    /* 모바일 환경 세로 배치 및 너비 조정 */
+    header { flex-direction: column; gap: 10px; text-align: center; }
+    .search-section { flex-direction: column; }
+    .search-section input { max-width: 100%; }
+}
